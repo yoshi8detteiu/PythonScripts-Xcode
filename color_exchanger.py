@@ -8,6 +8,11 @@ import timeit
 import sys
 # import skimage
 
+# 使い方
+# Anacondaを導入して以下を実行。これを使ったときのPythonバージョンは3.7でした
+# `python color_exchanger.py 色定義しているAssetCatalogのパス`
+
+
 # AssetCatalogで近似している色定義を返す
 def replacedColorName(dict, r, g, b, a):
         r = float(r)
@@ -138,7 +143,6 @@ def createNamedColorTagStr(json):
                 blue = str(blue)
                 alpha = str(alpha)
                 # とりあえずsRGBのみ対応
-                # TODO: DisplayP3くらいは対応したい
                 color_tag = '<color red="' + red + '" green="' + green + '" blue="' + blue + '" alpha="' + alpha + '" colorSpace="custom" customColorSpace="sRGB"/>'
 
                 return '<namedColor name="' + name + '">\n            ' + color_tag + '\n        </namedColor>'
